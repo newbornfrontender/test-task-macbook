@@ -12,5 +12,12 @@
     "compile": "postcss src/index.css -d public",
     "start": "yarn compile -w",
     "build": "yarn clean && yarn compile -m --env production"
+  },
+  "devDependencies": {
+    "cssnano": "^4.1.8",
+    "postcss-cli": "^6.1.1",
+    "postcss-preset-env": "^6.5.0",
+    "prettier": "^1.16.1",
+    "serve": "^10.1.1"
   }
 }
