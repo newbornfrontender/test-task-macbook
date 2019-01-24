@@ -1,0 +1,145 @@
+:root {
+  --screen-color: #2196f3;
+
+  --square-size: 200px;
+  --square-gap: 10px;
+  --square-color: #3c4ba0;
+
+  --text-color: #fff;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #c8c8c8 0%, #928f8a 100%);
+}
+
+.laptop {
+  width: 1200px;
+  height: 619px;
+  padding: 28px 237px 0 283px;
+  background-image: url(/img/bg-1200.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+}
+
+.screen {
+  padding: 5px;
+  height: 429px;
+  overflow-y: auto;
+  background-color: var(--screen-color);
+  box-sizing: border-box;
+}
+
+.content {
+  width: 100%;
+}
+
+.square {
+  width: var(--square-size);
+  height: var(--square-size);
+  transform: rotate(45deg);
+
+  &::before {
+    position: absolute;
+    content: '';
+    width: calc(var(--square-size) / 6);
+    height: calc(var(--square-size) / 6);
+    border-width: 0;
+    border-style: solid;
+    border-color: var(--screen-color);
+    border-right-width: var(--square-gap);
+    border-bottom-width: var(--square-gap);
+  }
+
+  & .square-content .title {
+    text-shadow: 1px 1px 0 transparent, 2px 2px 0 rgb(0 0 0 / 30%);
+  }
+
+  &:first-of-type {
+    margin-top: 60px;
+    margin-left: 60px;
+    background-color: var(--square-color);
+
+    &::before {
+      background-color: var(--square-color);
+    }
+
+    & .square-content {
+      & .title {
+        margin-top: 45px;
+      }
+
+      & .text {
+        margin-top: 18px;
+      }
+    }
+  }
+
+  &:nth-of-type(2) {
+    --square-size: 65px;
+    --square-gap: 3px;
+    --square-color: #8bc34a;
+    --text-color: #1f6080;
+
+    margin-top: 3px;
+    margin-left: 191px;
+    background-color: var(--square-color);
+
+    &::before {
+      background-color: var(--square-color);
+    }
+
+    & .square-content {
+      & .title {
+        margin-top: 23px;
+        font-size: 0.95rem;
+      }
+    }
+  }
+
+  &:last-of-type {
+    --square-size: 140px;
+    --square-gap: 6px;
+    --square-color: #efb60b;
+    --text-color: #333;
+
+    margin-top: 91px;
+    margin-left: 399px;
+    background-color: var(--square-color);
+
+    &::before {
+      background-color: var(--square-color);
+    }
+
+    & .square-content {
+      & .title {
+        margin-top: 61px;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+.square-content {
+  height: var(--square-size);
+  width: var(--square-size);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-color);
+  transform: rotate(-45deg);
+
+  & .text {
+    text-align: center;
+  }
+}
+
+.title,
+.text {
+  margin: 0;
+}
